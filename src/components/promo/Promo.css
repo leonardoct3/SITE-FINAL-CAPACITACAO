@@ -1,0 +1,14 @@
+.promo {
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  
+  .promo p {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  

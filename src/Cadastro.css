@@ -1,0 +1,109 @@
+/* Estilo geral para o container */
+* {
+    margin: 0;
+    padding: 0;
+  
+  }
+  .tudo {
+      background-image: url('assets/login-background.png'); /* Substitua pelo caminho da sua imagem de fundo */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+  }
+  .login-container {
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      
+    }
+    
+    /* Estilo para o conteúdo da página de login */
+    .login-content {
+      
+      padding: 40px;
+      
+      
+      text-align: center;
+    }
+    
+    /* Estilo para o título de login */
+    .login-title {
+      font-size: 2em;
+      margin-bottom: 10px;
+      position: relative;
+    }
+    
+    /* Linha gradiente abaixo do título */
+    .gradient-line {
+      height: 4px;
+      width: 150px;
+      margin: 0 auto 20px auto;
+      background: linear-gradient(90deg, #9619ab, #d684d8);
+    }
+    
+    /* Texto de boas-vindas */
+    .welcome-text {
+      font-size: 1.2em;
+      color: #666;
+      margin-bottom: 20px;
+    }
+    
+    /* Estilo para o formulário */
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    /* Estilo para os campos do formulário */
+    .form-group {
+      width: 80%;
+      margin-bottom: 20px;
+    }
+    
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+    
+    /* Estilo para os campos de entrada */
+    .login-form input {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-bottom: 2px solid #ccc;
+      background: transparent;
+      font-size: 1em;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    
+    .login-form input:focus {
+      border-bottom: 2px solid purple;
+    }
+    
+    /* Estilo para o botão de envio */
+    .login-button {
+      padding: 10px 20px;
+      border: none;
+      background: linear-gradient(90deg, #9619ab, #d684d8);
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    
+    .login-button:hover {
+      background: linear-gradient(270deg, #9619ab, #d684d8);
+      
+    }
+    

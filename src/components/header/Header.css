@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo h1 {
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .logo .nutri {
+    color: #9619ab; /* Cor roxa */
+  }
+  
+  .nav-links ul {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+  }
+  
+  .nav-links li {
+    margin-left: 1.5rem;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+  }
+  
+  .nav-links a:hover {
+    color: #d684d8;
+    transition: color 0.3s ease;
+  }
+
+  .login a {
+    color: #9619ab;
+  }
+
+  .cadastro a {
+    color: #9619ab;
+  }
+
+  .cadastro:hover {
+    border: #d684d8 solid 1px;
+  }
+
+  .cadastro {
+    border: #9619ab solid 1px;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  @media (max-width: 600px) {
+    .overview,
+    .contato {
+      display: none;
+    }
+  }
+  

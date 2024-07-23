@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+button {
+  font-family: 'Poppins', sans-serif;
+}
+.hero {
+    width: 100%;
+    
+    background-image: url('../../assets/purple-mixed-acrylic-paints.png'); /* Substitua pelo caminho correto da sua imagem */
+    background-size: max-content;
+    opacity: 1;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Posiciona o conteúdo à direita */
+    align-items: flex-end;
+    text-align: right; /* Alinha o texto à direita */
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  
+  .hero-content {
+    opacity: 1;
+    position: relative;
+    z-index: 2;
+    margin-right: 10%; /* Adiciona espaço à direita */
+  }
+  
+  .hero-title {
+    font-size: 5rem;
+    opacity: 1;
+    color: black; /* Cor do texto */
+    margin-left: 30%;
+    text-align: right;
+  }
+  
+  .hero-button {
+    opacity: 1;
+    font-size: 2rem;
+    padding: 1rem;
+    color: #fff;
+    background: linear-gradient(90deg, #9619ab, #d684d8); /* Gradiente roxo */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 2rem;
+  }
+
+  .hero-button:hover {
+    color: #333;
+    transition: color 0.3s ease;
+  }
+
+  @media (max-width: 840px) {
+    .hero-title { font-size: 4rem;
+    margin-left: 10%; }
+    .hero-button { font-size: 1.5rem; }
+    .hero-content {
+      margin: 0;
+    }
+    
+  }
+  @media (max-width: 500px) {
+    .hero-title { font-size: 3rem;
+    margin-left: 2rem; }
+    .hero-button { font-size: 1.5rem; }
+    .hero-content {
+      margin: 0;
+    }
+  }
+
+  

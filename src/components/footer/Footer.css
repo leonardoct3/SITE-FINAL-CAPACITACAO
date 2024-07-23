@@ -1,0 +1,70 @@
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 40px 20px;
+    background-image: url('../../assets/footer-background.jpg'); /* Adicione o caminho para sua imagem de fundo */
+    background-size: cover;
+    background-position: center;
+    
+  }
+  
+  .footer-section {
+    flex: 1;
+    max-width: 300px;
+    text-align: left; /* Alinha o texto à esquerda */
+  }
+  
+  .footer-title {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+  
+  .highlight {
+    color: purple;
+  }
+  
+  .footer-icons {
+    display: flex;
+    
+  }
+  
+  .icon {
+    width: 35px;
+    height: 35px;
+    margin: 2rem;
+    margin-left: 0;
+    display: inline-block;
+  }
+  
+  
+  .footer-input {
+    width: calc(100% - 90px); /* Ajusta a largura para acomodar o botão */
+    padding: 10px;
+    border: none;
+    border-radius: 4px 0 0 4px; /* Arredondar apenas os cantos esquerdo superior e inferior */
+    float: left;
+  }
+  
+  .subscribe-button {
+    
+    border: none;
+    background-color: purple;
+    color: white;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0; /* Arredondar apenas os cantos direito superior e inferior */
+    float: left;
+    padding: 1rem;
+  }
+  
+  .subscribe-form {
+    overflow: hidden; /* Para limpar os floats */
+    display: flex;
+  }
+  
+  .footer p {
+    font-size: 1em;
+    color: #666;
+    clear: both; /* Garantir que os parágrafos fiquem abaixo do formulário */
+  }
+  

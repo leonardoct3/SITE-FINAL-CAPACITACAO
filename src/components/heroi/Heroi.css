@@ -1,0 +1,42 @@
+.heroi {
+    width: 100%;
+    height: 70vh; /* Ocupa a altura total da janela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  
+  .heroi-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .heroi-text {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+  }
+  
+  .heroi-title {
+    font-size: 3rem;
+    color: #333;
+    margin-left: 25%;
+  }
+  
+  .heroi-image {
+    flex: 1;
+    text-align: right;
+  }
+  
+  .heroi-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .highlight {
+    color: #9619ab;
+  }

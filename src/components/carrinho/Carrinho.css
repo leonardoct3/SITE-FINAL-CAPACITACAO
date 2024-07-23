@@ -1,0 +1,52 @@
+.carrinho {
+    position: fixed;
+    right: -300px; /* Escondido inicialmente */
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+    transition: right 0.3s;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 1000; /* Garanta que esteja acima de outros elementos */
+  }
+  
+  .carrinho.open {
+    right: 0; /* Mostra o carrinho quando aberto */
+  }
+  
+  .carrinho h2 {
+    margin-top: 0;
+  }
+  
+  .carrinho-products {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .carrinho-product {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .product-image {
+    max-width: 60px;
+    margin-right: 10px;
+  }
+  
+  .product-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .product-description {
+    margin: 0 0 5px 0;
+  }
+  
+  .product-price {
+    color: #800080; /* Cor do preço */
+    font-weight: bold;
+  }
+  
