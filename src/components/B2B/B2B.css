@@ -2,10 +2,9 @@
 
 .b2b-form {
     font-family: 'Poppins', sans-serif;
-    width: 45vw;
+    width: 750px;
     margin: 0 auto;
     padding: 20px;
-    
     border-radius: 8px;
     
   }
@@ -58,9 +57,28 @@
 
   .linha input {
     background-color: #f1baf2;
+    min-width: 100px;
+    flex-wrap: wrap;
   }
 
   .linha input::placeholder {
     color: #9619ab;
   }
-  
+
+  textarea::placeholder {
+    /* Add your styles here */
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .b2b-form button:hover {
+    background-color: #333;
+  }
+
+
+  @media (max-width: 850px) {
+    .b2b-form {
+      width: 100%;
+      gap: 10px;
+    }
+    
+  }

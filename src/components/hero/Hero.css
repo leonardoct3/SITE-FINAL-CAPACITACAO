@@ -39,7 +39,7 @@ button {
   }
   
   .hero-title {
-    font-size: 5rem;
+    font-size: 4rem;
     opacity: 1;
     color: black; /* Cor do texto */
     margin-left: 30%;
@@ -64,7 +64,7 @@ button {
   }
 
   @media (max-width: 840px) {
-    .hero-title { font-size: 4rem;
+    .hero-title { font-size: 3.5rem;
     margin-left: 10%; }
     .hero-button { font-size: 1.5rem; }
     .hero-content {

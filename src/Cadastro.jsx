@@ -2,7 +2,7 @@ import './Cadastro.css'; // Importando o arquivo de estilo
 import Header from './components/header/Header';
 import { Link } from 'react-router-dom';
 
-const Cadastro = () => {
+const CadastroCliente = () => {
   return (
     <div className='tudo'>
     <Header />
@@ -28,6 +28,7 @@ const Cadastro = () => {
             <label htmlFor="password" className="sr-only">Confirme sua senha:</label>
             <input type="password" id="password" name="password" placeholder="Confirme sua senha" required />
           </div>
+          <Link to='/cadastro-funcionario'><a className='linkref'>Sou funcionario</a></Link>
           <Link to='/produtos'><button type="submit" className="login-button">Continue</button></Link>
         </form>
       </div>
@@ -36,4 +37,4 @@ const Cadastro = () => {
   );
 };
 
-export default Cadastro;
+export default CadastroCliente;

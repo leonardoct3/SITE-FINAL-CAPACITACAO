@@ -27,7 +27,7 @@ function Carrinho({ togglePopup, toggleCart, visible, selected, removeProduct, i
                 <span className="quantity">{product.quantity}</span>
                 <button onClick={() => incrementQuantity(product)} className="quantity-button">+</button>
               </div>
-              <p className="product-price">{`R$ ${(product.preco * product.quantity).toFixed(2)}`}</p>
+              <p className="product-price">{`R$ ${(10 * product.quantity).toFixed(2)}`}</p>
             </div>
             <button onClick={() => removeProduct(product)} className="remove-button">
               <img src={thrashIcon} alt="Remover" />
@@ -35,7 +35,7 @@ function Carrinho({ togglePopup, toggleCart, visible, selected, removeProduct, i
           </li>
         ))}
       </ul>
-      <h3>Insira seu CEP:</h3>
+      <h3>Insira seu CEP*</h3>
       <div className='form'>
         <input className='cep-input' type="text" placeholder='CEP'/>
         <button className='calc-button'>Calcular</button>

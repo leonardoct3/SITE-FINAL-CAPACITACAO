@@ -2,7 +2,7 @@ import './Login.css'; // Importando o arquivo de estilo
 import Header from './components/header/Header';
 import { Link } from 'react-router-dom';
 
-const LoginCliente = () => {
+const LoginFuncionario = () => {
   return (
     <div className='tudo'>
     <Header />
@@ -20,7 +20,7 @@ const LoginCliente = () => {
             <label htmlFor="password" className="sr-only">Senha:</label>
             <input type="password" id="password" name="password" placeholder="Senha" required />
           </div>
-          <Link to='/login-funcionario'><a className='linkref'>Sou funcionário</a></Link>
+          <Link to='/login-cliente'><a className='linkref'>Sou cliente</a></Link>
           <Link to='/produtos'><button type="submit" className="login-button">Continue</button></Link>
         </form>
       </div>
@@ -29,4 +29,4 @@ const LoginCliente = () => {
   );
 };
 
-export default LoginCliente;
+export default LoginFuncionario;

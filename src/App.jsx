@@ -6,10 +6,12 @@ import Destaques from './components/destaques/Destaques';
 import Infos from './components/infos/Infos';
 import Avaliacoes from './components/avaliacoes/Avaliacoes';
 import Footer from './components/footer/Footer';
-import Login from './Login'; // Importe a página de login
-import Cadastro from './Cadastro';
+import LoginCliente from './Login'; // Importe a página de login
+import CadastroFuncionario from './CadastroFuncionario';
 import Produtos from './Produtos';
 import B2b from './components/B2B/B2B';
+import LoginFuncionario from './LoginFuncionario';
+import CadastroCliente from './Cadastro';
 //import Overview from './Overview';
 //import Contact from './Contact';
 //import Signup from './Signup';
@@ -20,9 +22,11 @@ function App() {
       <div className="App">
         
         <Routes>
-          <Route path="/login" element={<Login />} />
+          <Route path="/login-cliente" element={<LoginCliente />} />
+          <Route path='/login-funcionario' element={<LoginFuncionario />} />
           {/* Adicione outras rotas aqui conforme necessário */}
-          <Route path="/cadastro" element={<Cadastro />} />
+          <Route path="/cadastro-cliente" element={<CadastroCliente />} />
+          <Route path='/cadastro-funcionario' element={<CadastroFuncionario/>} />
           <Route path="/produtos" element={<Produtos />} />
           <Route path="/" element={
             <>

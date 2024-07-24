@@ -11,8 +11,8 @@ function Header() {
         <ul>
           <li className='overview'><Link to="/">OVERVIEW</Link></li>
           <li className='contato'><a href="#contact">CONTATO</a></li>
-          <li className='login'><Link to="/login">LOGIN</Link></li> {/* Use Link em vez de a */}
-          <li className='cadastro'><Link to='/cadastro'><a href="/cadastro">CADASTRO</a></Link></li>
+          <li className='login'><Link to="/login-cliente">LOGIN</Link></li> {/* Use Link em vez de a */}
+          <li className='cadastro'><Link to='/cadastro-cliente'><a href="/cadastro">CADASTRO</a></Link></li>
         </ul>
       </nav>
     </header>

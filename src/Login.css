@@ -100,10 +100,19 @@
     cursor: pointer;
     border-radius: 4px;
     transition: background 0.3s;
+    margin-top: 20px;
   }
   
   .login-button:hover {
     background: linear-gradient(270deg, #9619ab, #d684d8);
     
+  }
+
+  .linkref {
+    color: #9619ab;
+    text-decoration: underline;
+    font-size: .9em;
+    margin: 3rem;
+
   }
   

@@ -14,17 +14,17 @@ const Infos = () => {
       <h2>Nossos Valores</h2>
       <ul className='valores'>
         <li className='valor'>
-          <img src={qualityIcon} alt="" />
+          <img className='img' src={qualityIcon} alt="" />
           <p className='title'>Qualidade</p>
           <p>Priorizamos ingredientes naturais e processos sustentáveis.</p>
         </li>
         <li className='valor'>
-          <img src={inovationIcon} alt="" />
+          <img className='img' src={inovationIcon} alt="" />
           <p className='title'>Inovação</p>
           <p>Estamos sempre buscando novas formas de melhorar nossos produtos.</p>
         </li>
         <li className='valor'>
-          <img src={compromiseIcon} alt="" />
+          <img className='img' src={compromiseIcon} alt="" />
           <p className='title'>Compromisso</p>
           <p>Com a saúde e o bem-estar de nossos consumidores.</p>
         </li>
