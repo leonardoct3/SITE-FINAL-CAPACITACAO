@@ -40,3 +40,14 @@
   .highlight {
     color: #9619ab;
   }
+
+  @media (max-width: 768px) {
+    .heroi-content {
+      flex-direction: column;
+    }
+  
+    .heroi-title {
+      margin-left: 0;
+    }
+    
+  }

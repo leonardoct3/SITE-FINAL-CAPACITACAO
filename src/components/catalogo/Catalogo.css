@@ -2,6 +2,7 @@
     display: flex;
     padding: 20px;
     box-sizing: border-box;
+    flex-wrap: wrap;
   }
   
   .catalogo-filters {
@@ -36,10 +37,11 @@
     flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
+    justify-content: center;
   }
   
   .product-card {
-    
+    min-width: 200px;
     border-radius: 5px;
     padding: 20px;
     box-sizing: border-box;
@@ -124,3 +126,4 @@
     right: 50px;
     
 }
+

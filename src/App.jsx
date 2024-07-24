@@ -9,6 +9,7 @@ import Footer from './components/footer/Footer';
 import Login from './Login'; // Importe a página de login
 import Cadastro from './Cadastro';
 import Produtos from './Produtos';
+import B2b from './components/B2B/B2B';
 //import Overview from './Overview';
 //import Contact from './Contact';
 //import Signup from './Signup';
@@ -30,6 +31,7 @@ function App() {
               <Destaques />
               <Infos />
               <Avaliacoes />
+              <B2b />
               <Footer />
             </>
           } />

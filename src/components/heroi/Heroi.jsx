@@ -6,7 +6,7 @@ function Heroi() {
     <div className="heroi">
       <div className="heroi-content">
         <div className="heroi-text">
-          <h1 className="heroi-title">não é só uma <span className='highlight'>barrinha</span>, é uma <span className='highlight'>experiência!</span></h1>
+          <h1 className="heroi-title">não é só uma <span className='highlight'>barrinha</span>, é uma <span className='highlight'>experiência</span>!</h1>
         </div>
         <div className="heroi-image">
           <img 

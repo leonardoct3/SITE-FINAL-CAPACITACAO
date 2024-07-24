@@ -2,7 +2,13 @@ import './Carrinho.css';
 import PropTypes from 'prop-types';
 import thrashIcon from '../../assets/thrash.png';
 
-function Carrinho({ toggleCart, visible, selected, removeProduct, incrementQuantity, decrementQuantity }) {
+function Carrinho({ togglePopup, toggleCart, visible, selected, removeProduct, incrementQuantity, decrementQuantity }) {
+
+  function doItAll() {
+    togglePopup();
+    toggleCart();
+  }  
+
   return (
     <div className={`carrinho ${visible ? 'open' : ''}`}>
       <div className='line'>
@@ -39,7 +45,7 @@ function Carrinho({ toggleCart, visible, selected, removeProduct, incrementQuant
         <input className='cupom-input' type="text" placeholder='Cupom de Desconto' />
         <button className='calc-button'>Aplicar</button>
       </div>
-      <button className='finalizar'>FINALIZAR PEDIDO</button>
+      <button onClick={() => doItAll()} className='finalizar'>FINALIZAR PEDIDO</button>
 
     </div>
   );
@@ -48,6 +54,7 @@ function Carrinho({ toggleCart, visible, selected, removeProduct, incrementQuant
 Carrinho.propTypes = {
   visible: PropTypes.bool.isRequired,
   toggleCart: PropTypes.func.isRequired,
+  togglePopup: PropTypes.func.isRequired,
   selected: PropTypes.arrayOf(PropTypes.shape({
     image: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,

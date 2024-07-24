@@ -6,9 +6,10 @@ import strawberryImage from '../../assets/protein-bar-strawberry.png';
 import cookiesImage from '../../assets/protein-bar-cookies&cream.png';
 import BotaoCarrinho from '../botao-carrinho/BotaoCarrinho';
 import Carrinho from '../carrinho/Carrinho';
+import PropTypes from 'prop-types';
 
 // Componente: Catalogo
-function Catalogo() {
+function Catalogo({ togglePopup }) {
 
   // Estados
   const [selectedFilter, setSelectedFilter] = useState(null);
@@ -210,6 +211,7 @@ function Catalogo() {
       </div>
       <BotaoCarrinho toggleCart={toggleCart} />
       <Carrinho 
+        togglePopup={togglePopup}
         toggleCart={toggleCart} 
         visible={cartVisible} 
         selected={selectedProducts} 
@@ -220,5 +222,10 @@ function Catalogo() {
     </div>
   );
 }
+
+// Prop Types
+Catalogo.propTypes = {
+  togglePopup: PropTypes.func.isRequired,
+};
 // Exporta o componente Catalogo
 export default Catalogo;

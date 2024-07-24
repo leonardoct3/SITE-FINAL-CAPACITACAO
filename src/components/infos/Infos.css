@@ -3,7 +3,7 @@
 .infos {
     font-family: 'Poppins', sans-serif;
     text-align: center;
-    padding: 40px 20px;
+    
     margin: 10rem;
     margin-top: 0;
   }
@@ -11,7 +11,7 @@
   .infos h2 {
     font-size: 2.5em;
     color: #333;
-    margin-bottom: 20px;
+    margin: 5rem;
   }
   
   .infos p {
@@ -34,6 +34,38 @@
   .gradient-button:hover {
     color: #333;
     transition: color 0.3s ease;
+  }
+
+  .valores {
+    display: flex;
+    justify-content: space-around;
+    margin: 5%;
+    min-width: none;
+    
+  }
+
+  .valor {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .valor:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+  }
+
+  img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .infos .title {
+    font-size: 2em;
+    color: #9619ab;
+    margin-bottom: 20px;
   }
   
 
