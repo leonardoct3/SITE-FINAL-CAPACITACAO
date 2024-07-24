@@ -1,15 +1,62 @@
+// Imports: React (useState), CSS, Imagens, Componentes
 import { useState } from 'react';
 import './Catalogo.css';
 import brownieImage from '../../assets/brownie-isolated-white-background.jpg';
 import strawberryImage from '../../assets/protein-bar-strawberry.png';
 import cookiesImage from '../../assets/protein-bar-cookies&cream.png';
 import BotaoCarrinho from '../botao-carrinho/BotaoCarrinho';
+import Carrinho from '../carrinho/Carrinho';
 
-
+// Componente: Catalogo
 function Catalogo() {
+
+  // Estados
   const [selectedFilter, setSelectedFilter] = useState(null);
   const [filterValue, setFilterValue] = useState('');
+  const [cartVisible, setCartVisible] = useState(false);
+  const [selectedProducts, setSelectedProducts] = useState([]);
 
+  // Funções manipuladoras das variáveis de estado
+  const addProduct = (product) => {
+    const existingProduct = selectedProducts.find(p => p.sabor === product.sabor);
+    if (existingProduct) {
+      setSelectedProducts(
+        selectedProducts.map(p => 
+          p.sabor === product.sabor ? { ...p, quantity: p.quantity + product.unidades } : p
+        )
+      );
+    } else {
+      setSelectedProducts([...selectedProducts, { ...product, quantity: product.unidades }]);
+    }
+  };
+
+  const incrementQuantity = (product) => {
+    setSelectedProducts(
+      selectedProducts.map(p => 
+        p.sabor === product.sabor ? { ...p, quantity: p.quantity + 1 } : p
+      )
+    );
+  };
+
+  const decrementQuantity = (product) => {
+    setSelectedProducts(
+      selectedProducts.map(p => 
+        p.sabor === product.sabor && p.quantity > 1 ? { ...p, quantity: p.quantity - 1 } : p
+      )
+    );
+  };
+
+  const removeProduct = (product) => {
+    setSelectedProducts(selectedProducts.filter(p => p.sabor !== product.sabor));
+  };
+
+  function toggleCart() {
+    setCartVisible(!cartVisible);
+    console.log(cartVisible);
+  }
+
+
+  // Produtos hardcoded
   const products = [
     {
       image: brownieImage,
@@ -76,6 +123,7 @@ function Catalogo() {
     }
   ];
 
+  // Funções manipuladoras dos filtros
   const handleFilterClick = (filter) => {
     setSelectedFilter(selectedFilter === filter ? null : filter);
     setFilterValue('');
@@ -85,6 +133,7 @@ function Catalogo() {
     setFilterValue(event.target.value);
   };
 
+  // Produtos filtrados
   const filteredProducts = selectedFilter
     ? products.filter((product) => {
         if (selectedFilter === 'unidades' && filterValue) {
@@ -98,7 +147,8 @@ function Catalogo() {
         }
       })
     : products;
-
+  
+  // Renderização do componente
   return (
     <div className="catalogo">
       <div className="catalogo-filters">
@@ -107,7 +157,7 @@ function Catalogo() {
           <li className='filtro' onClick={() => handleFilterClick('unidades')}>
             <p>Unidades</p>
             <p>{selectedFilter === 'unidades' ? '-' : '+'}</p>
-            </li>
+          </li>
           <li className='custom-select'>
             {selectedFilter === 'unidades' && (
             <select onChange={handleFilterChange} value={filterValue}>
@@ -154,13 +204,21 @@ function Catalogo() {
             <img src={product.image} alt={product.sabor} className="product-image" />
             <p className="product-description">{`${product.unidades} barrinha${product.unidades > 1 ? 's' : ''} de ${product.sabor} com ${product.proteina}g de proteína!`}</p>
             <p className="product-price">{`R$ ${product.preco.toFixed(2)}`}</p>
-            <button className="product-button">Adicionar</button>
+            <button onClick={() => addProduct(product)} className="product-button">Adicionar</button>
           </div>
         ))}
       </div>
-      <BotaoCarrinho />
+      <BotaoCarrinho toggleCart={toggleCart} />
+      <Carrinho 
+        toggleCart={toggleCart} 
+        visible={cartVisible} 
+        selected={selectedProducts} 
+        removeProduct={removeProduct} 
+        incrementQuantity={incrementQuantity} 
+        decrementQuantity={decrementQuantity} 
+      />
     </div>
   );
 }
-
+// Exporta o componente Catalogo
 export default Catalogo;

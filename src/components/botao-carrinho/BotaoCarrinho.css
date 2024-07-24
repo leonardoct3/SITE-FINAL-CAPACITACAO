@@ -2,15 +2,15 @@
     position: fixed;
     bottom: 20px;
     right: 20px;
-    padding: 10px 20px;
-    
+    padding: 30px;
     width: 100px;
-    color: white;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
     transition: position 0.3s;
+    z-index: 100;
   }
+
+
   
 
   

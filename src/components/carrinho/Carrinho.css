@@ -1,8 +1,8 @@
 .carrinho {
     position: fixed;
-    right: -300px; /* Escondido inicialmente */
+    right: -400px; /* Escondido inicialmente */
     top: 0;
-    width: 300px;
+    width: 400px;
     height: 100%;
     background-color: #fff;
     box-shadow: -2px 0 5px rgba(0,0,0,0.5);
@@ -12,7 +12,7 @@
     z-index: 1000; /* Garanta que esteja acima de outros elementos */
   }
   
-  .carrinho.open {
+  .open {
     right: 0; /* Mostra o carrinho quando aberto */
   }
   
@@ -29,20 +29,27 @@
   .carrinho-product {
     display: flex;
     margin-bottom: 20px;
+    margin-top: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ccc;
+    
   }
   
-  .product-image {
-    max-width: 60px;
-    margin-right: 10px;
+  .cart-product-image {
+    width: 130px;
+    
+    object-fit: cover;
+    
   }
+
   
   .product-details {
     display: flex;
     flex-direction: column;
-  }
-  
-  .product-description {
-    margin: 0 0 5px 0;
+    justify-content: center;
+    align-items: center;
   }
   
   .product-price {
@@ -50,3 +57,89 @@
     font-weight: bold;
   }
   
+  .line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .close-button {
+    background-color: transparent; /* Fundo transparente */
+    border: none; /* Sem bordas */
+    color: #800080; /* Cor do texto preta */
+    font-weight: bold;
+    font-size: 24px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de mãozinha ao passar o mouse */
+    
+    
+    padding: 1rem; /* Espaçamento interno */
+    transition: color 0.3s ease; /* Transição suave para a cor */
+  }
+  
+  .close-button:hover {
+    color: #ff0000; /* Cor do texto ao passar o mouse (vermelho) */
+  }
+
+  .quantity-button, .remove-button {
+    background-color: transparent; /* Fundo transparente */
+    border: none; /* Sem bordas */
+    color: #333; /* Cor do texto preta */
+    font-weight: bold;
+    font-size: 24px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de mãozinha ao passar o mouse */
+    padding: 1rem; /* Espaçamento interno */
+    transition: color 0.3s ease; /* Transição suave para a cor */
+  }
+
+  .remove-button img {
+    width: 30px;
+  }
+
+  .product-quantity {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .cep-input, .cupom-input {
+    
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    background: transparent;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+
+  .form {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .calc-button {
+    
+    width: 80px;
+    border: none;
+    background-color: #9619ab;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    
+  }
+
+  .finalizar {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #9619ab;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    
+    
+  }
