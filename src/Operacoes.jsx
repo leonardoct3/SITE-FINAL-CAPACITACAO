@@ -5,10 +5,14 @@ import strawberryImage from './assets/protein-bar-strawberry.png';
 import cookiesImage from './assets/protein-bar-cookies&cream.png';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import NovoProduto from './components/novoProduto/NovoProduto';
 
-const Operacoes = ({ loggedIn }) => {
+const Operacoes = ({ loggedIn, unLog }) => {
     // Your code here
-
+    const [showPopup, setShowPopup] = useState(false);
+    const togglePopup = () => {
+        setShowPopup(!showPopup);
+    }
     const [products, setProducts] = useState([
         {
           image: brownieImage,
@@ -108,9 +112,14 @@ const Operacoes = ({ loggedIn }) => {
         }))
       };
 
+      const addProduct = (product) => {
+        setProducts([...products, product
+        ]);
+      };
+
     return (
         <div>
-            <Header loggedIn={loggedIn} />
+            <Header loggedIn={loggedIn} unLog={unLog} />
             <div className='big-container'>
             <div className='title-content'>
                 <h2 className='title'>Controle de estoque</h2>
@@ -118,11 +127,12 @@ const Operacoes = ({ loggedIn }) => {
             <div className='small-container'>
                 <div className='gap'>
                 
-                <button className='button-add'>+ Novo Produto</button>
+                <button onClick={togglePopup} className='button-add'>+ Novo Produto</button>
                 <p>{`${products.length} produtos`}</p>
                 </div>
             <div className="catalogo-products">
                 {products.map((product, index) => (
+                  console.log(product),
                 <div key={index} className="produto-card">
                     <img src={product.image} alt={product.sabor} className="imagem-produto" />
                     <p className="product-description">{`${product.unidades > 1 ? 'Pacote com ' : ''}${product.unidades > 1 ? product.unidades : `${product.unidades} unidade de`} barrinha${product.unidades > 1 ? 's' : ''} de ${product.sabor.toUpperCase()}, com ${product.proteina}g de proteína${product.unidades > 1 ? ' cada.' : '.'}`}</p>
@@ -137,6 +147,7 @@ const Operacoes = ({ loggedIn }) => {
             <div className='save-container'>
                 <button className='button-save'>SALVAR</button>
             </div>
+            <NovoProduto showPopup={showPopup} togglePopup={togglePopup} addProduct={addProduct} />
         </div>
     );
 };
@@ -145,6 +156,7 @@ const Operacoes = ({ loggedIn }) => {
 
 Operacoes.propTypes = {
   loggedIn: PropTypes.bool.isRequired,
+  unLog: PropTypes.func.isRequired
 };
 
 export default Operacoes;

@@ -8,13 +8,13 @@ import Promo from './components/promo/Promo';
 import Popup from './components/popup/Popup';
 import PropTypes from 'prop-types';
 
-const Produtos = ({ loggedIn }) => {
+const Produtos = ({ loggedIn, unLog }) => {
   const [showPopup, setShowPopup] = useState(false);
   const togglePopup = () => setShowPopup(!showPopup);
 
   return (
     <div>
-        <Header loggedIn={loggedIn} />
+        <Header loggedIn={loggedIn} unLog={unLog} />
         <Popup showPopup={showPopup}/>
         <Heroi />
         <Catalogo togglePopup={togglePopup} />
@@ -25,7 +25,8 @@ const Produtos = ({ loggedIn }) => {
 };
 
 Produtos.propTypes = {
-  loggedIn: PropTypes.bool.isRequired
+  loggedIn: PropTypes.bool.isRequired,
+  unLog: PropTypes.func.isRequired
   
 };
 

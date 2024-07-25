@@ -37,6 +37,10 @@
     
   }
   
+  .none {
+    display: none;
+  }
+
   .cart-product-image {
     width: 130px;
     
@@ -142,4 +146,16 @@
     cursor: pointer;
     
     
+  }
+
+  .forma {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .subtotal {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
