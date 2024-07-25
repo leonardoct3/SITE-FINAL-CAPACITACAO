@@ -1,0 +1,39 @@
+.banner {
+    background-color: #9619ab;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .marquee {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    width: fit-content; /* Garante que a largura do contêiner seja 100% */
+    animation: marquee 10s linear infinite;
+  }
+  
+  .marquee span {
+    display: inline-block;
+    padding: 0 50px;
+    font-size: 1.2rem;
+    color: white;
+  }
+  
+  .marquee span strong {
+    color: white;
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translateX(80%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  

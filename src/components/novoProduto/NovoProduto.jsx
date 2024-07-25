@@ -80,7 +80,7 @@ const NovoProduto = ({ addProduct, showPopup, togglePopup }) => {
             <input 
               type="number" 
               name="preco" 
-              value={product.preco} 
+              value={parseFloat(product.preco)} 
               onChange={handleChange} 
               placeholder="Preço" 
               required 

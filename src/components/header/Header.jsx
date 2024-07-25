@@ -13,8 +13,8 @@ function Header({ loggedIn, unLog }) {
           <li className='home'><Link to="/">HOME</Link></li>
           <li className='contato'><a href="#footer">CONTATO</a></li>
           <li className='produtos'><Link to='/produtos'><a href="#contact">PRODUTOS</a></Link></li>
-          {!loggedIn ? <li className='login'><Link to="/login-cliente">LOGIN</Link></li> : null}
-          {!loggedIn ? <li className='cadastro'><Link to='/cadastro-cliente'><a href="/cadastro">CADASTRO</a></Link></li> : null}
+          {!loggedIn ? <li className='login'><Link to="/login">LOGIN</Link></li> : null}
+          {!loggedIn ? <li className='cadastro'><Link to='/cadastro'><a href="/cadastro">CADASTRO</a></Link></li> : null}
           {loggedIn ? <li className='cadastro'><Link onClick={() => unLog()} to='/'><a  href="/">SAIR</a></Link></li> : null}
         </ul>
       </nav>
