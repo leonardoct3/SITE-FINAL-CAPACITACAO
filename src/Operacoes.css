@@ -1,0 +1,105 @@
+.imagem-produto {
+    width: 150px;
+    object-fit: cover;
+}
+
+.carrinho-produto {
+    display: flex;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    border: 1px solid #ccc;
+  }
+
+  .produto-card {
+    min-width: 200px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+    width: calc(33.333% - 20px);
+    text-align: center;
+  }
+
+  .title {
+    font-size: 3rem;
+    
+  }
+
+  .title-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 3rem;
+    margin-top: 0rem;
+    gap: 50px;
+  }
+
+  .button-add {
+    background-color: #9619ab;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .catalogo-products {
+    flex: 3;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    justify-content: center;
+  }
+
+  .button-save {
+    background-color: #9619ab;
+    color: white;
+    border: none;
+    padding: 20px 40px;
+    cursor: pointer;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    margin-top: 0;
+  }
+
+  .button-save:hover {
+    background-color: #800080;
+    transition: 0.3s;
+  }
+
+  .button-add:hover {
+    background-color: #800080;
+    transition: 0.3s;
+  }
+
+  .save-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+
+  .big-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-around;
+    margin: 5rem;
+    margin-bottom: 0;
+  }
+
+  .small-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content:space-around;
+    margin: 5rem;
+  }

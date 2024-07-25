@@ -12,6 +12,7 @@ import Produtos from './Produtos';
 import B2b from './components/B2B/B2B';
 import LoginFuncionario from './LoginFuncionario';
 import CadastroCliente from './Cadastro';
+import Operacoes from './Operacoes';
 //import Overview from './Overview';
 //import Contact from './Contact';
 //import Signup from './Signup';
@@ -28,6 +29,7 @@ function App() {
           <Route path="/cadastro-cliente" element={<CadastroCliente />} />
           <Route path='/cadastro-funcionario' element={<CadastroFuncionario/>} />
           <Route path="/produtos" element={<Produtos />} />
+          <Route path="/operacoes" element={<Operacoes />} />
           <Route path="/" element={
             <>
               <Header />

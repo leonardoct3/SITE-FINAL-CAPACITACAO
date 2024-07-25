@@ -21,7 +21,7 @@ const LoginFuncionario = () => {
             <input type="password" id="password" name="password" placeholder="Senha" required />
           </div>
           <Link to='/login-cliente'><a className='linkref'>Sou cliente</a></Link>
-          <Link to='/produtos'><button type="submit" className="login-button">Continue</button></Link>
+          <Link to='/operacoes'><button type="submit" className="login-button">Continue</button></Link>
         </form>
       </div>
     </div>
