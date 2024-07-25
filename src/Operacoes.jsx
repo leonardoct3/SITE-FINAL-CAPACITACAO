@@ -4,8 +4,9 @@ import brownieImage from './assets/brownie-isolated-white-background.jpg';
 import strawberryImage from './assets/protein-bar-strawberry.png';
 import cookiesImage from './assets/protein-bar-cookies&cream.png';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
-const Operacoes = () => {
+const Operacoes = ({ loggedIn }) => {
     // Your code here
 
     const [products, setProducts] = useState([
@@ -109,7 +110,7 @@ const Operacoes = () => {
 
     return (
         <div>
-            <Header />
+            <Header loggedIn={loggedIn} />
             <div className='big-container'>
             <div className='title-content'>
                 <h2 className='title'>Controle de estoque</h2>
@@ -138,6 +139,12 @@ const Operacoes = () => {
             </div>
         </div>
     );
+};
+
+
+
+Operacoes.propTypes = {
+  loggedIn: PropTypes.bool.isRequired,
 };
 
 export default Operacoes;

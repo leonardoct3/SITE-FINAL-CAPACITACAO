@@ -13,26 +13,34 @@ import B2b from './components/B2B/B2B';
 import LoginFuncionario from './LoginFuncionario';
 import CadastroCliente from './Cadastro';
 import Operacoes from './Operacoes';
+import { useState } from 'react';
 //import Overview from './Overview';
 //import Contact from './Contact';
 //import Signup from './Signup';
 
 function App() {
+  const [loggedIn, setLoggedIn] = useState(false);
+  const handleLog = () => {
+    setLoggedIn(true);
+  }
+  const unLog = () => {
+    setLoggedIn(false);
+  }
   return (
     <Router>
       <div className="App">
         
         <Routes>
-          <Route path="/login-cliente" element={<LoginCliente />} />
-          <Route path='/login-funcionario' element={<LoginFuncionario />} />
+          <Route path="/login-cliente" element={<LoginCliente loggedIn={loggedIn} handleLog={handleLog} unLog={unLog} />} />
+          <Route path='/login-funcionario' element={<LoginFuncionario loggedIn={loggedIn} handleLog={handleLog} unLog={unLog} />} />
           {/* Adicione outras rotas aqui conforme necessário */}
-          <Route path="/cadastro-cliente" element={<CadastroCliente />} />
-          <Route path='/cadastro-funcionario' element={<CadastroFuncionario/>} />
-          <Route path="/produtos" element={<Produtos />} />
-          <Route path="/operacoes" element={<Operacoes />} />
+          <Route path="/cadastro-cliente" element={<CadastroCliente loggedIn={loggedIn} handleLog={handleLog} unLog={unLog}/>} />
+          <Route path='/cadastro-funcionario' element={<CadastroFuncionario loggedIn={loggedIn} handleLog={handleLog} unLog={unLog}/>} />
+          <Route path="/produtos" element={<Produtos loggedIn={loggedIn} unLog={unLog}/>} />
+          <Route path="/operacoes" element={<Operacoes loggedIn={loggedIn} unLog={unLog}/>} />
           <Route path="/" element={
             <>
-              <Header />
+              <Header loggedIn={loggedIn} unLog={unLog}/>
               <Hero /> {/* Inserindo o componente Hero */}
               <Destaques />
               <Infos />

@@ -71,8 +71,9 @@ body {
   }
 
   @media (max-width: 600px) {
-    .overview,
-    .contato {
+    .home,
+    .contato,
+    .produtos {
       display: none;
     }
   }

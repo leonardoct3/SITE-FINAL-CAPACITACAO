@@ -6,14 +6,15 @@ import Catalogo from './components/catalogo/Catalogo';
 import Footer from './components/footer/Footer';
 import Promo from './components/promo/Promo';
 import Popup from './components/popup/Popup';
+import PropTypes from 'prop-types';
 
-const Produtos = () => {
+const Produtos = ({ loggedIn }) => {
   const [showPopup, setShowPopup] = useState(false);
   const togglePopup = () => setShowPopup(!showPopup);
 
   return (
     <div>
-        <Header />
+        <Header loggedIn={loggedIn} />
         <Popup showPopup={showPopup}/>
         <Heroi />
         <Catalogo togglePopup={togglePopup} />
@@ -21,6 +22,11 @@ const Produtos = () => {
         <Footer />
     </div>
   );
+};
+
+Produtos.propTypes = {
+  loggedIn: PropTypes.bool.isRequired
+  
 };
 
 export default Produtos;

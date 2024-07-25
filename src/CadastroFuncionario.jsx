@@ -1,11 +1,12 @@
 import './Cadastro.css'; // Importando o arquivo de estilo
 import Header from './components/header/Header';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-const CadastroFuncionario = () => {
+const CadastroFuncionario = ({ loggedIn, handleLog }) => {
   return (
     <div className='tudo'>
-    <Header />
+    <Header loggedIn={loggedIn} />
     <div className="login-container">
       <div className="login-content">
         <h2 className="login-title">Cadastro</h2>
@@ -29,12 +30,17 @@ const CadastroFuncionario = () => {
             <input type="password" id="password" name="password" placeholder="Confirme sua senha" required />
           </div>
           <Link to='/cadastro-cliente'><a className='linkref'>Sou cliente</a></Link>
-          <Link to='/operacoes'><button type="submit" className="login-button">Continue</button></Link>
+          <Link to='/operacoes'><button onClick={() => handleLog()} type="submit" className="login-button">Continue</button></Link>
         </form>
       </div>
     </div>
     </div>
   );
+};
+
+CadastroFuncionario.propTypes = {
+  loggedIn: PropTypes.bool.isRequired,
+  handleLog: PropTypes.func.isRequired
 };
 
 export default CadastroFuncionario;
