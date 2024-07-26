@@ -6,6 +6,7 @@ import cookiesImage from './assets/protein-bar-cookies&cream.png';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import NovoProduto from './components/novoProduto/NovoProduto';
+import Insights from './components/insights/Insights';
 
 const Operacoes = ({ loggedIn, unLog }) => {
     // Your code here
@@ -124,6 +125,7 @@ const Operacoes = ({ loggedIn, unLog }) => {
             <div className='title-content'>
                 <h2 className='title'>Controle de estoque</h2>
             </div>
+            <Insights />
             <div className='small-container'>
                 <div className='gap'>
                 

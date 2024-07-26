@@ -1,0 +1,48 @@
+.insights-container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px;
+  }
+  
+  .insight-card {
+    flex: 1;
+    
+    max-width: 600px;
+    height: auto;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .insight-card .MuiCardContent-root {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .insight-card h5 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+
+  .css-ag7rrr-MuiTypography-root {
+    font-size: 2rem;
+    color: #9619ab;
+    font-weight: bold;
+  }
+  
+  .insight-card p {
+    font-size: 1.25rem;
+    font-style: italic;
+  }
+  
