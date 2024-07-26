@@ -33,24 +33,22 @@
   
   .product {
     background-color: white;
-    
-    
     padding: 1rem;
     text-align: center;
     margin: 1rem; /* Espaçamento entre os itens */
-    flex: 1 0 auto; /* Garante que os itens não se expandam além do contêiner */
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    align-items: center;
-    justify-content: center;
   }
   
   .product img {
     max-width: 100%;
-    border-radius: 8px 8px 0 0;
-    width: 30rem;
+    height: 15rem;
+    width: 20rem;
     opacity: 0.8;
+    transition: transform 0.3s ease;
+  }
+
+  .product img:hover {
+    transform: scale(1.1);
+    
   }
   
   .product h3 {
@@ -89,5 +87,11 @@
     .slick-slider img {
         display: flex;
     }
+  }
+
+  .queridinhos {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-size: 2.5rem;
   }
   

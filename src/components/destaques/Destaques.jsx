@@ -4,28 +4,28 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './Destaques.css';
 
-import brownieImage from '../../assets/brownie-isolated-white-background.jpg';
-import strawberryImage from '../../assets/protein-bar-strawberry.png';
-import cookiesImage from '../../assets/protein-bar-cookies&cream.png';
+import brownieImage from '../../assets/pack-barras-brownie.png';
+import doceDeLeiteImage from '../../assets/pack-barras-chocolate-veganas.png';
+import cookiesImage from '../../assets/pack-barras-doce-de-leite.png';
 
 const Destaques = () => {
   const sliderRef = useRef(null);
 
   const products = [
     {
-      title: 'Chocolate',
+      title: 'Brownie',
       imgSrc: brownieImage,
-      description: 'Barrinha de Proteína de Chocolate, feita com ingredientes naturais e rica em proteínas. Perfeita para recarregar suas energias a qualquer hora do dia!',
+      description: 'Barrinha de Proteína de Brownie, feita com ingredientes naturais e rica em proteínas. Perfeita para recarregar suas energias a qualquer hora do dia!',
     },
     {
-      title: 'Morango',
-      imgSrc: strawberryImage,
-      description: 'Barrinha de Proteína de Morango, feita com ingredientes naturais e rica em proteínas. Perfeita para recarregar suas energias a qualquer hora do dia!',
+      title: 'Chocolate Vegana',
+      imgSrc: doceDeLeiteImage,
+      description: 'Barrinha de Proteína de Chocolate Vegana, feita com ingredientes naturais e rica em proteínas. Perfeita para recarregar suas energias a qualquer hora do dia!',
     },
     {
-      title: 'Cookies&Cream',
+      title: 'Doce de Leite',
       imgSrc: cookiesImage,
-      description: 'Barrinha de Proteína de Cookies&Cream, feita com ingredientes naturais e rica em proteínas. Perfeita para recarregar suas energias a qualquer hora do dia!',
+      description: 'Barrinha de Proteína de Doce de Leite, vegana, feita com ingredientes naturais e rica em proteínas. Perfeita para recarregar suas energias a qualquer hora do dia!',
     },
     // Adicione mais produtos conforme necessário
   ];
@@ -65,7 +65,7 @@ const Destaques = () => {
 
   return (
     <div className="destaques">
-      <h2>Nossos <span className="highlight">queridinhos</span></h2>
+      <h1 className='queridinhos'>Combos <span className="highlight">Queridinhos</span></h1>
       <div className="carousel-container">
         <button className="nav-button prev-button" onClick={prev}>{"<"}</button>
         <div className="slider-wrapper">

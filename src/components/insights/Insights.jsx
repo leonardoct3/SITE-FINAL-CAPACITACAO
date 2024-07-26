@@ -1,99 +1,22 @@
 import { Card, CardContent, Typography } from '@mui/material';
-import brownieImage from '../../assets/brownie-isolated-white-background.jpg';
-import strawberryImage from '../../assets/protein-bar-strawberry.png';
-import cookiesImage from '../../assets/protein-bar-cookies&cream.png';
 import './Insights.css';
+import PropTypes from 'prop-types';
 
-const Insights = () => {
-    const products = [
-        {
-          image: brownieImage,
-          unidades: 1,
-          proteina: 10,
-          preco: 10.00,
-          sabor: 'chocolate',
-          quantity: 1
-        },
-        {
-          image: strawberryImage,
-          unidades: 12,
-          proteina: 10,
-          preco: 120.00,
-          sabor: 'morango',
-          quantity: 1
-        },
-        {
-          image: cookiesImage,
-          unidades: 36,
-          proteina: 10,
-          preco: 360.00,
-          sabor: 'cookies&cream',
-            quantity: 1
-        },
-        {
-          image: strawberryImage,
-          unidades: 1,
-          proteina: 10,
-          preco: 10.00,
-          sabor: 'morango',
-            quantity: 1
-        },
-        {
-          image: brownieImage,
-          unidades: 12,
-          proteina: 10,
-          preco: 120.00,
-          sabor: 'chocolate',
-            quantity: 1
-        },
-        {
-          image: brownieImage,
-          unidades: 36,
-          proteina: 10,
-          preco: 360.00,
-          sabor: 'chocolate',
-            quantity: 1
-        },
-        {
-          image: cookiesImage,
-          unidades: 1,
-          proteina: 10,
-          preco: 10.00,
-          sabor: 'cookies&cream',
-            quantity: 1
-        },
-        {
-          image: cookiesImage,
-          unidades: 12,
-          proteina: 10,
-          preco: 120.00,
-          sabor: 'cookies&cream',
-          quantity: 1
-        },
-        {
-          image: strawberryImage,
-          unidades: 36,
-          proteina: 10,
-          preco: 360.00,
-          sabor: 'morango',
-            quantity: 1
-        }
-      ];
+const Insights = ({ products }) => {
+    
 
 
-  const totalUnits = products.reduce((acc, product) => acc + product.unidades, 0);
+  const totalUnits = products.reduce((acc, product) => acc + product.quantity, 0);
+  const totalPrice = products.reduce((acc, product) => acc + product.preco * product.unidades * product.quantity, 0);
   
-
-  const flavors = products.reduce((acc, product) => {
-    acc[product.sabor] = (acc[product.sabor] || 0) + 1;
+  const veganUnits = products.reduce((acc, product) => {
+    if (product.sabor.includes('veganas')) {
+      return acc + product.quantity;
+    }
     return acc;
-  }, {});
-  const mostFrequentFlavor = Object.keys(flavors).reduce((a, b) => flavors[a] > flavors[b] ? a : b);
+  }
+  , 0);
 
-  const priceByFlavor = products.reduce((acc, product) => {
-    acc[product.sabor] = (acc[product.sabor] || 0) + product.preco;
-    return acc;
-  }, {});
 
   return (
     <div className="insights-container">
@@ -103,34 +26,36 @@ const Insights = () => {
             Total de Barrinhas em Estoque
           </Typography>
           <Typography variant="body2">
-            {totalUnits} unidades
+          {totalUnits + ' barrinhas'}
           </Typography>
         </CardContent>
       </Card>
       <Card className="insight-card">
         <CardContent>
           <Typography variant="h5" component="div">
-            Sabor de Barrinha Mais Frequente
+            Total de Barrinhas Veganas
           </Typography>
           <Typography variant="body2">
-            {mostFrequentFlavor} ({flavors[mostFrequentFlavor]} vezes)
+            {veganUnits + ' barrinhas veganas'}
           </Typography>
         </CardContent>
       </Card>
       <Card className="insight-card">
         <CardContent>
           <Typography variant="h5" component="div">
-            Preço Total por Sabor
+            Valor Total de Barrinhas em Estoque
           </Typography>
-          {Object.keys(priceByFlavor).map((flavor) => (
-            <Typography key={flavor} variant="body2">
-              {flavor}: R${priceByFlavor[flavor].toFixed(2)}
-            </Typography>
-          ))}
+          <Typography>
+            {'R$ '+totalPrice.toFixed(2)}
+          </Typography>
         </CardContent>
       </Card>
     </div>
   );
+};
+
+Insights.propTypes = {
+  products: PropTypes.array.isRequired
 };
 
 export default Insights;

@@ -7,11 +7,11 @@ import compromiseIcon from '../../assets/compromise-icon.png';
 const Infos = () => {
   return (
     <div className="infos">
-      <h2>Quem Somos</h2>
+      <h2>Quem somos?</h2>
       <p>
         Na BioNutri, nossa missão é promover um estilo de vida saudável e ativo através de alimentos nutritivos e saborosos. Valorizamos a qualidade, a sustentabilidade e o bem-estar de nossos clientes, oferecendo produtos que combinam o melhor da natureza com a ciência da nutrição. Com cada barrinha, buscamos inspirar e energizar você para alcançar seus objetivos.
       </p>
-      <h2>Nossos Valores</h2>
+      <h2><span className='highlight'>Nossos Valores</span></h2>
       <ul className='valores'>
         <li className='valor'>
           <img className='img' src={qualityIcon} alt="" />

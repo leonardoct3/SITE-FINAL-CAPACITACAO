@@ -1,16 +1,17 @@
 .carrinho {
-    position: fixed;
-    right: -400px; /* Escondido inicialmente */
-    top: 0;
-    width: 400px;
-    height: 100%;
-    background-color: #fff;
-    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
-    transition: right 0.3s;
-    padding: 20px;
-    box-sizing: border-box;
-    z-index: 1000; /* Garanta que esteja acima de outros elementos */
-  }
+  position: fixed;
+  right: -450px; /* Escondido inicialmente */
+  top: 0;
+  width: 430px;
+  height: 100vh; /* Limite a altura ao tamanho da janela de visualização */
+  background-color: #fff;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+  transition: right 0.3s;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 1000; /* Garanta que esteja acima de outros elementos */
+  overflow-y: auto; /* Adiciona uma barra de rolagem vertical */
+}
   
   .open {
     right: 0; /* Mostra o carrinho quando aberto */
@@ -81,7 +82,7 @@
   }
   
   .close-button:hover {
-    color: #ff0000; /* Cor do texto ao passar o mouse (vermelho) */
+    color: #333; /* Cor do texto ao passar o mouse (vermelho) */
   }
 
   .quantity-button, .remove-button {
@@ -158,4 +159,19 @@
   .subtotal {
     margin-top: 1rem;
     margin-bottom: 1rem;
+  }
+
+  .hover {
+    transition: background-color 0.3s ease;
+  }
+
+  .hover:hover {
+    background-color: #333;
+  }
+
+  @media (max-width: 470px) {
+    .carrinho {
+      width: 100%;
+    }
+    
   }

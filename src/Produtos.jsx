@@ -17,7 +17,7 @@ const Produtos = ({ loggedIn, unLog }) => {
         <Header loggedIn={loggedIn} unLog={unLog} />
         <Popup showPopup={showPopup}/>
         <Heroi />
-        <Catalogo togglePopup={togglePopup} />
+        <Catalogo loggedIn={loggedIn} togglePopup={togglePopup} />
         <Promo />
         <Footer />
     </div>

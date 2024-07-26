@@ -2,17 +2,27 @@ import './Carrinho.css';
 import PropTypes from 'prop-types';
 import thrashIcon from '../../assets/thrash.png';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-function Carrinho({ togglePopup, toggleCart, visible, selected, removeProduct, incrementQuantity, decrementQuantity }) {
+function Carrinho({ loggedIn, togglePopup, toggleCart, visible, selected, removeProduct, incrementQuantity, decrementQuantity }) {
 
   const [cep, setCep] = useState('');
+  const navigate = useNavigate();
   const [showInfos, setShowInfos] = useState(false);
+  const [discount, setDiscount] = useState(false);
+  const [cupom, setCupom] = useState('');
   const [address, setAddress] = useState({
     logradouro: '',
     bairro: '',
     localidade: '',
     uf: ''
   });
+
+  const activateCoupon = (coupon) => {
+    if(coupon === 'PROMO10') {
+      setDiscount(0.9);
+    }
+  }
 
   const toggleInfos = () => {
     setShowInfos(!showInfos);
@@ -38,9 +48,18 @@ function Carrinho({ togglePopup, toggleCart, visible, selected, removeProduct, i
   }
 
   function doItAll() {
+    if (selected.length === 0) {
+      alert('Seu carrinho está vazio!');
+      return;
+    }
+    if (loggedIn) {
     togglePopup();
     toggleCart();
-  }  
+    } else {
+      alert('Você precisa estar logado para finalizar a compra');
+      navigate('/login');
+    }
+  }
 
   return (
     <div className={`carrinho ${visible ? 'open' : ''}`}>
@@ -77,7 +96,19 @@ function Carrinho({ togglePopup, toggleCart, visible, selected, removeProduct, i
           type="text" 
           placeholder='CEP'
         />
-        <button onClick={() => fetchAddress(cep)} className='calc-button'>Calcular</button>
+        <button onClick={() => fetchAddress(cep)} className='calc-button hover'>Calcular</button>
+      </div>
+
+      <h3>Cupom de Desconto</h3>
+      <div className='form'>
+        <input  
+        value={cupom}
+        onChange={(e) => setCupom(e.target.value)}
+          className='cupom-input' 
+          type="text" 
+          placeholder='Cupom de Desconto'
+        />
+        <button onClick={() => activateCoupon(cupom)} className='calc-button hover'>Adicionar</button>
       </div>  
       
       
@@ -92,14 +123,21 @@ function Carrinho({ togglePopup, toggleCart, visible, selected, removeProduct, i
       </div>
       <div className='subtotal'>
         <h3>Subtotal:</h3>
-        <p className=''>R$ {selected.reduce((acc, product) => acc + (10 * product.quantity), 0).toFixed(2)}</p>
+        <p className=''>R$ {selected.reduce((acc, product) => acc + (10 * product.quantity), 0).toFixed(2)}{address.logradouro ? ' + R$ 15.00 (frete)' : ''}{discount ? ' - 10% (cupom)' : ''}</p>
       </div>
-      <button onClick={() => doItAll()} className='finalizar'>FINALIZAR PEDIDO</button>
+      <button 
+        onClick={() => doItAll()} 
+        className='finalizar hover'>
+        FINALIZAR PEDIDO: {(
+          selected.reduce((acc, product) => acc + (10 * product.quantity), 0) + 
+          (address.logradouro ? 15 : 0)) * (discount ? 0.9 : 1).toFixed(2)}
+      </button>
     </div>
   );
 }
 
 Carrinho.propTypes = {
+  loggedIn: PropTypes.bool.isRequired,
   visible: PropTypes.bool.isRequired,
   toggleCart: PropTypes.func.isRequired,
   togglePopup: PropTypes.func.isRequired,

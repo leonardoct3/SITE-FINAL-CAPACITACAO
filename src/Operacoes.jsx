@@ -1,12 +1,22 @@
 import Header from './components/header/Header';
 import './Operacoes.css';
-import brownieImage from './assets/brownie-isolated-white-background.jpg';
-import strawberryImage from './assets/protein-bar-strawberry.png';
-import cookiesImage from './assets/protein-bar-cookies&cream.png';
+import brownieUnica from './assets/barra-unica-brownie.png';
+import chocolateVeganaUnica from './assets/barra-unica-chocolate-vegana.png';
+import chocolateUnica from './assets/barra-unica-chocolate.png';
+import cookiesAndCreamVeganaUnica from './assets/barra-unica-cookies-and-cream-vegana.png';
+import cookiesAndCreamUnica from './assets/barra-unica-cookies-and-cream.png';
+import doceDeLeiteUnica from './assets/barra-unica-doce-de-leite.png';
+import browniePack from './assets/pack-barras-brownie.png';
+import chocolateVeganasPack from './assets/pack-barras-chocolate-veganas.png';
+import chocolatePack from './assets/pack-barras-chocolate.png';
+import cookiesAndCreamVeganasPack from './assets/pack-barras-cookies-and-cream-veganas.png';
+import cookiesAndCreamPack from './assets/pack-barras-cookies-and-cream.png';
+import doceDeLeitePack from './assets/pack-barras-doce-de-leite.png';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import NovoProduto from './components/novoProduto/NovoProduto';
 import Insights from './components/insights/Insights';
+import Footer from './components/footer/Footer';
 
 const Operacoes = ({ loggedIn, unLog }) => {
     // Your code here
@@ -15,79 +25,103 @@ const Operacoes = ({ loggedIn, unLog }) => {
         setShowPopup(!showPopup);
     }
     const [products, setProducts] = useState([
-        {
-          image: brownieImage,
-          unidades: 1,
-          proteina: 10,
-          preco: 10.00,
-          sabor: 'chocolate',
-          quantity: 1
-        },
-        {
-          image: strawberryImage,
-          unidades: 12,
-          proteina: 10,
-          preco: 120.00,
-          sabor: 'morango',
-          quantity: 1
-        },
-        {
-          image: cookiesImage,
-          unidades: 36,
-          proteina: 10,
-          preco: 360.00,
-          sabor: 'cookies&cream',
-            quantity: 1
-        },
-        {
-          image: strawberryImage,
-          unidades: 1,
-          proteina: 10,
-          preco: 10.00,
-          sabor: 'morango',
-            quantity: 1
-        },
-        {
-          image: brownieImage,
-          unidades: 12,
-          proteina: 10,
-          preco: 120.00,
-          sabor: 'chocolate',
-            quantity: 1
-        },
-        {
-          image: brownieImage,
-          unidades: 36,
-          proteina: 10,
-          preco: 360.00,
-          sabor: 'chocolate',
-            quantity: 1
-        },
-        {
-          image: cookiesImage,
-          unidades: 1,
-          proteina: 10,
-          preco: 10.00,
-          sabor: 'cookies&cream',
-            quantity: 1
-        },
-        {
-          image: cookiesImage,
-          unidades: 12,
-          proteina: 10,
-          preco: 120.00,
-          sabor: 'cookies&cream',
-          quantity: 1
-        },
-        {
-          image: strawberryImage,
-          unidades: 36,
-          proteina: 10,
-          preco: 360.00,
-          sabor: 'morango',
-            quantity: 1
-        }
-      ]);
+      {
+        image: brownieUnica,
+        unidades: 1,
+        proteina: 10,
+        preco: 10.00,
+        sabor: 'brownie',
+        quantity: 15
+      },
+      {
+        image: chocolateVeganaUnica,
+        unidades: 1,
+        proteina: 10,
+        preco: 10.00,
+        sabor: 'chocolate vegana',
+        quantity: 20
+      },
+      {
+        image: chocolateUnica,
+        unidades: 1,
+        proteina: 10,
+        preco: 10.00,
+        sabor: 'chocolate',
+        quantity: 25
+      },
+      {
+        image: cookiesAndCreamVeganaUnica,
+        unidades: 1,
+        proteina: 10,
+        preco: 10.00,
+        sabor: 'cookies and cream veganas',
+        quantity: 30
+      },
+      {
+        image: cookiesAndCreamUnica,
+        unidades: 1,
+        proteina: 10,
+        preco: 10.00,
+        sabor: 'cookies and cream',
+        quantity: 35
+      },
+      {
+        image: doceDeLeiteUnica,
+        unidades: 1,
+        proteina: 10,
+        preco: 10.00,
+        sabor: 'doce de leite',
+        quantity: 40
+      },
+      {
+        image: browniePack,
+        unidades: 12,
+        proteina: 120,
+        preco: 100.00,
+        sabor: 'brownie',
+        quantity: 10
+      },
+      {
+        image: chocolateVeganasPack,
+        unidades: 12,
+        proteina: 120,
+        preco: 100.00,
+        sabor: 'chocolate vegana',
+        quantity: 8
+      },
+      {
+        image: chocolatePack,
+        unidades: 12,
+        proteina: 120,
+        preco: 100.00,
+        sabor: 'chocolate',
+        quantity: 12
+      },
+      {
+        image: cookiesAndCreamVeganasPack,
+        unidades: 12,
+        proteina: 120,
+        preco: 100.00,
+        sabor: 'cookies and cream veganas',
+        quantity: 9
+      },
+      {
+        image: cookiesAndCreamPack,
+        unidades: 12,
+        proteina: 120,
+        preco: 100.00,
+        sabor: 'cookies and cream',
+        quantity: 7
+      },
+      {
+        image: doceDeLeitePack,
+        unidades: 12,
+        proteina: 120,
+        preco: 100.00,
+        sabor: 'doce de leite',
+        quantity: 5
+      }
+    ]);
 
       const incrementQuantity = (product) => {
         setProducts(products.map((p) => {
@@ -125,7 +159,7 @@ const Operacoes = ({ loggedIn, unLog }) => {
             <div className='title-content'>
                 <h2 className='title'>Controle de estoque</h2>
             </div>
-            <Insights />
+            <Insights products={products} />
             <div className='small-container'>
                 <div className='gap'>
                 
@@ -150,6 +184,7 @@ const Operacoes = ({ loggedIn, unLog }) => {
                 <button className='button-save'>SALVAR</button>
             </div>
             <NovoProduto showPopup={showPopup} togglePopup={togglePopup} addProduct={addProduct} />
+            <Footer />
         </div>
     );
 };
